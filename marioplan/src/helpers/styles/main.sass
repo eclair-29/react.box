@@ -1,0 +1,80 @@
+/* IMPORTS 
+   ======================================= */
+@import 'bourbon/bourbon'
+@import 'globals/globals'
+
+/* WRAPPERS 
+   ======================================= */
+.wrapper 
+    width: 100%
+    max-width: 580px
+    margin: 0 auto
+    padding: 0 20px
+
+/* CARD
+   ======================================= */
+.card 
+    border-radius: 0            !important
+    box-shadow: none            !important
+    width: 100%                 !important
+    max-width: 100%             !important
+    border: 1px solid #E0E0E0   !important
+
+    .header 
+        font-size: 1rem !important
+        margin-bottom: 5px
+
+    .meta 
+        font-size: 0.9rem !important
+
+    .description
+        font-family: pangram    
+        color: #757575 !important
+
+/* NAV
+   ======================================= */
+.nav 
+    height: 50px
+    max-width: 100% !important 
+    padding: 0 30px !important
+    background: #9C27B0 
+    display: flex
+    justify-content: space-between 
+    align-items: center 
+
+    .logo 
+        color: #ffffff
+        font-size: 0.9rem !important
+
+    .menu  
+        display: flex
+        align-items: center
+        
+        li 
+            margin-left: 20px
+
+        a 
+            color: #ffffff 
+            font-size: 0.848rem !important
+
+/* NOTIFICATIONS
+   ======================================= */
+.notifications 
+    +position(absolute, 50px 0 null null)
+    +size(350px, 100vh)
+    background: #ffffff
+    border-left: 1px solid #E0E0E0
+
+    @media only screen and (max-width: 800px)
+        right: -400px
+
+    .container
+        width: 100%
+        max-width: 100%
+        padding: 20px
+
+
+/* PROJECT LIST
+   ======================================= */
+.projects
+    margin-top: 40px 
