@@ -7,7 +7,7 @@
    ======================================= */
 .wrapper 
     width: 100%
-    max-width: 580px
+    max-width: 500px
     margin: 0 auto
     padding: 0 20px
 
@@ -19,24 +19,29 @@
     width: 100%                 !important
     max-width: 100%             !important
     border: 1px solid #E0E0E0   !important
+    margin: 20px 0              !important
 
     .header 
         font-size: 1rem !important
         margin-bottom: 5px
 
     .meta 
-        font-size: 0.9rem !important
+        font-size: 0.84rem !important
+        color: #009688 !important
 
     .description
-        font-family: pangram    
+        font:
+            family: pangram    
+            size: 0.84rem !important
         color: #757575 !important
+        line-height: 25px
 
 /* NAV
    ======================================= */
 .nav 
     height: 50px
     max-width: 100% !important 
-    padding: 0 30px !important
+    padding: 0 40px !important
     background: #9C27B0 
     display: flex
     justify-content: space-between 
@@ -55,7 +60,11 @@
 
         a 
             color: #ffffff 
-            font-size: 0.848rem !important
+            font-size: 0.9rem !important
+
+/* DASHBOARD
+   ======================================= */
+.dashboard 
 
 /* NOTIFICATIONS
    ======================================= */
@@ -73,8 +82,69 @@
         max-width: 100%
         padding: 20px
 
-
 /* PROJECT LIST
    ======================================= */
 .projects
     margin-top: 40px 
+
+/* PROJECT DETAILS
+   ======================================= */
+.project-details 
+    margin-top: 40px
+
+    span 
+        font-size: 0.84rem !important
+        color: rgba(#000000, 0.4)
+
+        &:nth-child(2)
+            color: #009688 !important
+
+    h4 
+        margin-bottom: 5px
+
+    .content 
+        font:
+            family: pangram    
+            size: 0.84rem !important
+        color: #757575 !important
+        margin: 20px 0
+        line-height: 25px
+
+/* SIGN IN & SIGN UP
+   ======================================= */
+.signin, 
+.signup
+    margin-top: 80px
+    max-width: 400px !important
+
+    .form 
+        padding: 20px
+        border: 1px solid #E0E0E0 
+    
+    h4 
+        font-size: 1rem !important
+        text-align: center
+        padding-bottom: 30px
+
+    input 
+        color: #009688 !important
+
+    .button 
+        margin-top: 20px
+
+/* CREATE PROJECT
+   ======================================= */
+.create-project 
+    margin-top: 40px
+    max-width: 500px !important
+
+    h4 
+        font-size: 1rem !important
+        padding-bottom: 30px
+
+    input 
+        color: #009688 !important
+        
+    textarea 
+        resize: none !important
+        color: #009688 !important
