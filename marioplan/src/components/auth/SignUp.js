@@ -24,26 +24,52 @@ class SignUp extends Component {
     render() {
         return (
             <div className="signup wrapper">
-                <form onSubmit={ this.handle_submit } className="ui tiny form">
+                <form 
+                    onSubmit={ this.handle_submit } 
+                    className="ui tiny form">
+
                     <h4>Sign Up to join the Party</h4>
 
                     <div className="two fields">
                          <div className="field">
-                            <input onChange={ this.heandle_change } id="fname" type="text" placeholder="First Name"/>
+                            <input 
+                                onChange={ this.heandle_change } 
+                                id="fname" type="text" 
+                                placeholder="First Name"
+                            />
                         </div>
                         <div className="field">
-                            <input onChange={ this.heandle_change } id="lname" type="text" placeholder="Last name"/>
+                            <input 
+                                onChange={ this.heandle_change } 
+                                id="lname" 
+                                type="text" 
+                                placeholder="Last name"
+                            />
                         </div>
                     </div>
 
                     <div className="field">
-                        <input onChange={ this.heandle_change } id="email" type="email" placeholder="Email"/>
+                        <input 
+                            onChange={ this.heandle_change } 
+                            id="email" 
+                            type="email" 
+                            placeholder="Email"
+                        />
                     </div>
                     <div className="field">
-                        <input onChange={ this.heandle_change } id="password" type="password" placeholder="Password"/>
+                        <input 
+                            onChange={ this.heandle_change } 
+                            id="password" 
+                            type="password" 
+                            placeholder="Password"
+                        />
                     </div>
 
-                    <button type="submit" className="ui basic teal fluid small button">Register</button>
+                    <button 
+                        type="submit" 
+                        className="ui basic teal fluid small button">
+                            Register
+                    </button>
                 </form>
             </div>
         )

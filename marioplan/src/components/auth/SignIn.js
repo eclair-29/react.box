@@ -22,17 +22,34 @@ class SignIn extends Component {
     render() {
         return (
             <div className="signin wrapper">
-                <form onSubmit={ this.handle_submit } className="ui tiny form">
+                <form 
+                    onSubmit={ this.handle_submit } 
+                    className="ui tiny form">
+
                     <h4>Sign In to join the Party</h4>
 
                     <div className="field">
-                        <input onChange={ this.heandle_change } id="email" type="email" placeholder="Email"/>
+                        <input 
+                            onChange={ this.heandle_change } 
+                            id="email" 
+                            type="email" 
+                            placeholder="Email"
+                        />
                     </div>
                     <div className="field">
-                        <input onChange={ this.heandle_change } id="password" type="password" placeholder="Password"/>
+                        <input 
+                            onChange={ this.heandle_change } 
+                            id="password" 
+                            type="password" 
+                            placeholder="Password"
+                        />
                     </div>
 
-                    <button type="submit" className="ui basic teal fluid small button">Continue</button>
+                    <button 
+                        type="submit" 
+                        className="ui basic teal fluid small button">
+                            Continue
+                    </button>
                 </form>
             </div>
         )
