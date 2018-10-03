@@ -7,6 +7,62 @@
    ======================================= */
 .wrapper 
     width: 100%
-    max-width: 500px
+    max-width: 720px
     margin: 0 auto
     padding: 0 20px
+
+/* SEARCH 
+   ======================================= */
+.search 
+    margin-top: 40px
+
+    .dropdown 
+        border-radius: 0     !important
+        
+    .text 
+        color: #757575       !important 
+        font-family: pangram !important 
+
+    .item
+        font:
+            family: pangram  !important 
+            weight: normal   !important
+            size: 0.9rem     !important
+
+        color: #9E9E9E       !important 
+
+    input 
+        color: #E91E63 !important 
+ 
+/* SEARCH RESULTS
+   ======================================= */
+.search-results
+    display: grid 
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 1em 
+    margin: 40px 0
+
+    .no-image
+        margin-top: 40px 
+        color: #E91E63 !important 
+        font-family: pangram_medium !important
+
+/* IMAGE CONTAINER
+   ======================================= */   
+.image-container
+    +size(100%, 150px)
+    border: 1px solid #E0E0E0 
+    overflow: hidden
+    padding: 5px 
+    cursor: pointer
+
+    &:hover
+        border-color: #E91E63
+
+    img 
+        +size(100%)
+        
+/* IMAGE PREVIEW
+   ======================================= */   
+.image-preview > img 
+    +size(100%)
