@@ -1,0 +1,160 @@
+/* IMPORTS 
+   ======================================= */
+@import 'bourbon/bourbon'
+@import 'globals/globals'
+
+/* WRAPPERS 
+   ======================================= */
+.wrapper 
+    width: 100%
+    max-width: 580px
+    margin: 0 auto
+    padding: 0 20px
+
+/* CARD
+   ======================================= */
+.card 
+    border-radius: 0          !important
+    box-shadow: none          !important
+    width: 100%               !important
+    max-width: 100%           !important
+    border: 1px solid #E0E0E0 !important
+
+    .content:first-child > h6 
+        margin-bottom: 5px
+
+    .content:first-child > span 
+        color: #757575
+        font-size: 0.840rem !important
+
+    .content:last-child
+        display: flex
+        justify-content: space-between
+
+        span 
+            color: #4078c0
+            font-size: 0.840rem !important
+            width: 100%
+
+        span:last-child
+            text-align: right !important
+            width: 100%
+
+/* NAV 
+   ======================================= */
+.nav 
+    +size(100%, 70px)
+    background: #333333
+    display: flex
+    justify-content: space-between
+    align-items: center 
+    padding: 0 40px
+
+    a 
+        width: 70%
+
+        &:focus 
+            outline: none
+
+        .logo 
+            color: #ffffff
+            margin: 0 !important    
+    
+    .search-bar 
+        width: 100%
+        max-width: 580px
+
+        .selection 
+            font: 
+                family: pangram         !important
+                size: 0.9rem            !important
+
+            border-radius: 0            !important
+            padding: 0                  !important
+            display: flex
+            align-items: center 
+            min-height: 35px            !important
+            padding: .67857143em 2.1em .67857143em 1em !important
+            border: 1px solid tint(#333333, 40%) !important
+            background: transparent !important
+
+            .search 
+                color: tint(#333333, 80%) !important
+
+            .text
+                color: tint(#333333, 40%) !important
+
+            .menu 
+                border-radius: 0 !important
+                box-shadow: none !important
+
+    .menu
+        display: flex
+        height: inherit
+        justify-content: flex-end
+        align-items: center
+        width: 70%
+
+        li 
+            margin-left: 20px
+
+        a 
+            color: tint(#333333, 80%) 
+
+/* USERS 
+   ======================================= */
+.users 
+    margin-top: 40px
+
+/* USER DETAILS
+   ======================================= */
+.user-details
+    margin-top: 40px
+
+    .user-header
+        display: flex
+        justify-content: space-between
+
+        .identity
+            width: 100%
+
+            h4 
+                margin-bottom: 5px !important
+
+            span 
+                color: #757575
+                font-size: 0.840rem !important
+
+        .followers 
+            width: 100%
+            font-size: 0.840rem !important
+            color: #757575
+            text-align: right
+
+/* USER NAV
+   ======================================= */
+.user-nav 
+    margin-top: 40px
+    height: 50px
+    background: #FFFFFF
+    border: 1px solid #E0E0E0 
+
+    .menu   
+        display: flex
+        justify-content: space-around
+        align-items: center
+        height: inherit
+
+    a 
+        color: #4078c0
+        font-size: 0.9rem !important
+
+/* REPOS 
+   ======================================= */
+.repos
+    margin-top: 40px
+
+/* ISSUES 
+   ======================================= */
+.issues
+    margin-top: 40px
