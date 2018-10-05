@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const UserNav = () => {
+const UserNav = ({ user }) => {
     return (
         <nav className="user-nav">
             <ul className="menu">
-                <li><NavLink to='/'>Overview</NavLink></li>
-                <li><NavLink to='/'>Repos</NavLink></li>
-                <li><NavLink to='/'>Issues</NavLink></li>
-                <li><NavLink to='/'>Info</NavLink></li>
+                <li><NavLink to={ `/${user.login}/` }>Overview</NavLink></li>
+                <li><NavLink to={ `/${user.login}/repos` }>Repos</NavLink></li>
+                <li><NavLink to={ `/${user.login}/issues` }>Issues</NavLink></li>
+                <li><NavLink to={ `/${user.login}/info` }>Info</NavLink></li>
             </ul>
         </nav>
     )
