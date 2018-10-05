@@ -9,6 +9,8 @@ import Users from './components/users/Users'
 import Repos from './components/repositories/Repos'
 import Issues from './components/issues/Issues'
 import UserDetails from './components/users/UserDetails'
+import RepoDetails from './components/repositories/RepoDetails'
+import IssueDetails from './components/issues/IssueDetails'
 
 class App extends Component {
 	render() {
@@ -26,6 +28,8 @@ class App extends Component {
 
 						{/* With Params */}
 						<Route path='/:user' component={ UserDetails } />
+						<Route path='/:repo' component={ RepoDetails } />
+						<Route path='/:issue' component={ IssueDetails } />
 					</Switch>
 				</div>
 			</BrowserRouter>
