@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 
+// Issues List
+import IssuesList from './IssuesList'
+
 class Issues extends Component {
     render() {
         return (
             <div className="wrapper issues">
-                <h4 style={{ textAlign: 'center' }}>Issues</h4>
+                <IssuesList />
             </div>
         )
     }
