@@ -10,7 +10,7 @@ const UsersList = ({ users }) => {
             { users.length ? (
                 users.map(user => <UserSummary user={ user } key={ user.id } />)
             ) : (
-                <p style={{ textAlign: 'center' }}>No users found</p>
+                <p style={{ textAlign: 'center' }}>Loading...</p>
             ) }            
         </div>
     )

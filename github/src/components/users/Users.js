@@ -4,7 +4,14 @@ import { connect } from 'react-redux'
 // Users List
 import UsersList from './UsersList'
 
+// Actions
+import { fetch_users } from '../../store/actions/user_actions'
+
 class Users extends Component {
+    componentWillMount() {
+        this.props.fetch_users()
+    }
+
     render() {
         const { users } = this.props
 
@@ -23,4 +30,6 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Users)
+
+
+export default connect(mapStateToProps, { fetch_users })(Users)

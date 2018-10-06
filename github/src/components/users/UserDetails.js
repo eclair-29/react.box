@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 
@@ -11,38 +11,48 @@ import UserRepos from './UserRepos'
 import UserIssues from './UserIssues'
 import UserInfo from './UserInfo'
 
-const UserDetails = ({ user, match }) => {
-    return (
-        <div className="user-details wrapper">
-            {/* User Header */}
-            <header className="user-header">
-                <div className="identity">
-                    <h4>{ user.name }</h4>
-                    <span>{ user.login }</span>
-                </div>
-                <span className="followers">1,290 Followers</span>
-            </header>
+// Actions 
+import { fetch_user } from '../../store/actions/user_actions'
 
-            {/* User Navigation */}
-            <UserNav match={ match } />
+class UserDetails extends Component {
+    componentWillMount() {
+        const param = this.props.match.params.user
+        this.props.fetch_user(param)
+    }
 
-            {/* Routes */}
-            <Switch>
-                <Route exact path={ `${match.path}` } component={ UserOverview } />
-                <Route exact path={ `${match.path}/repos` } component={ UserRepos } />
-                <Route exact path={ `${match.path}/issues` } component={ UserIssues } />
-                <Route exact path={ `${match.path}/info` } component={ UserInfo } />
-            </Switch>
-        </div>
-    )
-}
+    render() {
+        const { user, match } = this.props
 
-const mapStateToProp = (state, own_props) => {
-    let login = own_props.match.params.user 
+        return (
+            <div className="user-details wrapper">
+                {/* User Header */}
+                <header className="user-header">
+                    <div className="identity">
+                        <h4>{ user.name }</h4>
+                        <span>{ user.login }</span>
+                    </div>
+                    <span className="followers">{ user.followers } Followers</span>
+                </header>
 
-    return {
-        user: state.users.users.find(user => user.login === login)
+                {/* User Navigation */}
+                <UserNav match={ match } />
+
+                {/* Routes */}
+                <Switch>
+                    <Route exact path={ `${match.path}` } component={ UserOverview } />
+                    <Route exact path={ `${match.path}/repos` } component={ UserRepos } />
+                    <Route exact path={ `${match.path}/issues` } component={ UserIssues } />
+                    <Route exact path={ `${match.path}/info` } component={ UserInfo } />
+                </Switch>
+            </div>
+        )
     }
 }
 
-export default connect(mapStateToProp)(UserDetails)
+const mapStateToProps = state => {
+    return {
+        user: state.users.user
+    }
+}
+
+export default connect(mapStateToProps, { fetch_user })(UserDetails)

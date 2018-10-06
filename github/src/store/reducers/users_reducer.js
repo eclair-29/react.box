@@ -1,15 +1,25 @@
-import uuid from 'uuid'
-
 const initial_state = {
-    users: [
-        // Dummy Data
-        { id: uuid(), login: 'octocat', name: 'Miguel De Chavez', type: 'Admin' },
-        { id: uuid(), login: 'tinetine.o9', name: 'Kristine Leyco', type: 'Moderator' }
-    ]
+    users: [],
+    user: {}
 }
 
 const users_reducer = (state = initial_state, action) => {
-    return state
+    switch (action.type) {
+        case 'FETCH_USERS': 
+            return {
+                ...state,
+                users: action.payload
+            }
+
+        case 'FETCH_SINGLE_USER':
+            return {
+                ...state,
+                user: action.payload
+            }
+
+        default: 
+            return state
+    }
 }
 
 export default users_reducer
