@@ -9,7 +9,7 @@ const ReposList = ({ repos }) => {
             { repos.length ? (
                 repos.map(repo => <RepoSummary repo={ repo } key={ repo.id } />)
             ) : (
-                <p style={{ textAlign: 'center' }}>No repositories found</p>
+                <p style={{ textAlign: 'center', marginTop: '40px' }}>No repositories found</p>
             ) }
         </div>
     )
