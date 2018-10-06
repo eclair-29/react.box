@@ -1,16 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const RepoDetails = () => {
+const RepoDetails = ({ repo }) => {
+    console.log(repo)
     return (
         <div className="repo-details wrapper">
             <div className="repo-header">
-                <h4>Github api</h4>
-                <span>repo by: octocat</span>
+                <h4>{ repo.name }</h4>
+                <span>repo by: { repo.login }</span>
             </div>
             <div className="repo-description">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi omnis ipsum illum quisquam a ex quibusdam dolorum aut nobis veniam!
-                </p>
+                <p>{ repo.description }</p>
             </div>
             <div className="repo-stats">
                 <h6>Repo Status</h6>
@@ -25,4 +25,12 @@ const RepoDetails = () => {
     )
 }
 
-export default RepoDetails
+const mapStateToProps = (state, own_props) => {
+    let id = own_props.match.params.repo 
+
+    return {
+        repo: state.repos.repos.find(repo => repo.id === id)
+    }
+}
+
+export default connect(mapStateToProps)(RepoDetails)

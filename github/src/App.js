@@ -23,13 +23,11 @@ class App extends Component {
 					{/* Routes */}
 					<Switch>
 						<Route exact path='/' component={ Users } />
+						<Route path='/repos/:repo' component={ RepoDetails } />
 						<Route path='/repos' component={ Repos } />
+						<Route path='/issues/:issue' component={ IssueDetails } />
 						<Route path='/issues' component={ Issues } />
-
-						{/* With Params */}
 						<Route path='/:user' component={ UserDetails } />
-						<Route path='/:repo' component={ RepoDetails } />
-						<Route path='/:issue' component={ IssueDetails } />
 					</Switch>
 				</div>
 			</BrowserRouter>

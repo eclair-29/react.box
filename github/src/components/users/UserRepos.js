@@ -1,11 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const UserRepos = () => {
+// Repos List
+import ReposList from '../repositories/ReposList'
+
+const UserRepos = ({ repos }) => {
     return (
         <div className="user-repos">
-            <h4 style={{ textAlign: 'center', marginTop: '40px' }}>User Repositories</h4>
+            <ReposList repos={ repos } />
         </div>
     )
 }
 
-export default UserRepos
+const mapStateToProps = (state, own_props) => {
+    let login = own_props.match.params.user 
+
+    return{
+        repos: state.repos.repos.filter(repo => repo.login === login)
+    }
+}
+
+export default connect(mapStateToProps)(UserRepos)
