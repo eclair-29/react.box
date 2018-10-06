@@ -11,7 +11,7 @@ import UserRepos from './UserRepos'
 import UserIssues from './UserIssues'
 import UserInfo from './UserInfo'
 
-const UserDetails = ({ user }) => {
+const UserDetails = ({ user, match }) => {
     return (
         <div className="user-details wrapper">
             {/* User Header */}
@@ -24,14 +24,14 @@ const UserDetails = ({ user }) => {
             </header>
 
             {/* User Navigation */}
-            <UserNav user={ user } />
+            <UserNav match={ match } />
 
             {/* Routes */}
             <Switch>
-                <Route exact path={ `/${user.login}/` } component={ UserOverview } />
-                <Route exact path={ `/${user.login}/repos` } component={ UserRepos } />
-                <Route exact path={ `/${user.login}/issues` } component={ UserIssues } />
-                <Route exact path={ `/${user.login}/info` } component={ UserInfo } />
+                <Route exact path={ `${match.path}` } component={ UserOverview } />
+                <Route exact path={ `${match.path}/repos` } component={ UserRepos } />
+                <Route exact path={ `${match.path}/issues` } component={ UserIssues } />
+                <Route exact path={ `${match.path}/info` } component={ UserInfo } />
             </Switch>
         </div>
     )

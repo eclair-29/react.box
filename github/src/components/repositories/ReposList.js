@@ -3,10 +3,14 @@ import React from 'react'
 // Repo Summary
 import RepoSummary from './RepoSummary'
 
-const ReposList = () => {
+const ReposList = ({ repos }) => {
     return (
         <div className="repos-list">
-            <RepoSummary />
+            { repos.length ? (
+                repos.map(repo => <RepoSummary repo={ repo } key={ repo.id } />)
+            ) : (
+                <p style={{ textAlign: 'center' }}>No repositories found</p>
+            ) }
         </div>
     )
 }

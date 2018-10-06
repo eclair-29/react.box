@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const RepoSummary = () => {
+const RepoSummary = ({ repo }) => {
     return (
-        <Link to='/'>
+        <Link to={ `/repos/${repo.id}` }>
             <div className="repo ui card">
                 <div className="content">
-                    <h6>Github api</h6>
-                    <span>by: octocat</span>
+                    <h6>{ repo.name }</h6>
+                    <span>by: { repo.login }</span>
                 </div>
                 <div className="content">
                     <span>Forks: 10</span>
