@@ -19,7 +19,7 @@ const store = createStore(root_reducer,
     // with compose method, we can apply multiple store enhancers...
     compose(
         // store ehnhancers
-        applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore }))),
+        applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
         reactReduxFirebase(fb_config),
         reduxFirestore(fb_config)
     )
