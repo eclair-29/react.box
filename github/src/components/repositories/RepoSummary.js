@@ -1,19 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+ 
 const RepoSummary = ({ repo }) => {
     return (
-        <Link to={ `/repos/${repo.id}` }>
+        <Link to={ `/repos/${repo.owner.login}/${repo.name}` }>
             <div className="repo ui card">
                 <div className="content">
                     <h6>{ repo.name }</h6>
-                    <span>by: { repo.login }</span>
+                    <span>by: { repo.owner.login }</span>
                 </div>
+
                 <div className="content">
-                    <span>Forks: 10</span>
-                    <span>Stars: 80</span>
-                    <span>Open Issues: 0</span>
-                    <span>License by: MIT</span>
+                    <div 
+                        className="description"
+                        style={{ 
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden'
+                         }}
+                    >
+                        { repo.description ? (repo.description) : (
+                            <i>No description</i>
+                        ) }
+                    </div>
                 </div>
             </div>
         </Link>
