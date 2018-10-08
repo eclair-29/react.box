@@ -9,7 +9,7 @@ import UserNav from './UserNav'
 import UserOverview from './UserOverview'
 import UserRepos from './UserRepos'
 import UserIssues from './UserIssues'
-import UserInfo from './UserInfo'
+import UserInfo from './UserInfo'   
 
 // Actions 
 import { fetch_user } from '../../store/actions/user_actions'

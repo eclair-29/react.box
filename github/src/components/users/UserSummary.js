@@ -9,9 +9,10 @@ const UserSummary = ({ user }) => {
                     <h6>{ user.login }</h6>
                     <span>{ user.type }</span>
                 </div>
+
                 <div className="content">
-                    <span>Repositories: 90</span>
-                    <span>issues: 40</span>
+                    <span>Repositories: Click to view</span>
+                    <span>issues: Click to view</span>
                 </div>
             </div>
         </Link>
