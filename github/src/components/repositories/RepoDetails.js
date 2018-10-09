@@ -7,7 +7,7 @@ import { fetch_repo_details } from '../../store/actions/repo_actions'
 class RepoDetails extends Component {
     componentWillMount() {
         let owner = this.props.match.params.user
-        let name = this.props.match.params.repo
+        let name  = this.props.match.params.repo
 
         this.props.fetch_repo_details(owner, name)
     }
@@ -17,10 +17,13 @@ class RepoDetails extends Component {
 
         return (
             <div className="repo-details wrapper">
+                {/* Repo Header */}
                 <div className="repo-header">
                     <h4>{ repo.name }</h4>
                     <span>repo by: { this.props.match.params.user }</span>
                 </div>
+
+                {/* Repo Desc. */}
                 <div className="repo-description">
                     { repo.description ? (
                         <p>{ repo.description }</p>
@@ -28,6 +31,8 @@ class RepoDetails extends Component {
                         <div>No Description</div>
                     ) }
                 </div>
+
+                {/* Repo Stats */}
                 <div className="repo-stats">
                     <h6>Repo Status</h6>
                     <div className="stats">

@@ -3,7 +3,7 @@ const initial_state = {
 }
 
 const issues_reducer = (state = initial_state, action) => {
-    return state
+   return state
 }
 
 export default issues_reducer

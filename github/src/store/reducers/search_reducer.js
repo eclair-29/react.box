@@ -1,9 +1,18 @@
 const initial_state = {
-    search: ''
+    options: []
 }
 
 const search_reducer = (state = initial_state, action) => {
-    return state
+    switch (action.type) {
+        case 'SEARCH_USERS':
+            return {
+                ...state, 
+                options: action.payload
+            }
+
+        default:
+            return state
+    }
 }
 
 export default search_reducer

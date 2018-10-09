@@ -75,29 +75,24 @@
         width: 100%
         max-width: 580px
 
-        .selection 
+        input 
             font: 
-                family: pangram         !important
-                size: 0.9rem            !important
+                family: pangram                                 !important
+                size: 0.840rem                                  !important
 
-            border-radius: 0            !important
-            padding: 0                  !important
+            border-radius: 0                                    !important
+            padding: 0                                          !important
             display: flex
             align-items: center 
-            min-height: 35px            !important
-            padding: .67857143em 2.1em .67857143em 1em !important
-            border: 1px solid tint(#333333, 40%) !important
-            background: transparent !important
+            min-height: 35px                                    !important
+            padding: .67857143em 1em .67857143em 1em            !important
+            border: 1px solid tint(#333333, 40%)                !important
+            background: transparent                             !important
+            color: tint(#333333, 80%)                           !important
 
-            .search 
-                color: tint(#333333, 80%) !important
-
-            .text
-                color: tint(#333333, 40%) !important
-
-            .menu 
-                border-radius: 0 !important
-                box-shadow: none !important
+        .input
+            max-width: 580px !important
+            width: 100% !important
 
     .menu
         display: flex
@@ -116,6 +111,14 @@
    ======================================= */
 .users 
     margin-top: 40px
+
+.user > .content 
+    display: block !important
+
+    span 
+        color: #BDBDBD      !important
+        font-size: 0.840rem !important
+
 
 /* USER DETAILS
    ======================================= */
@@ -159,6 +162,25 @@
     a 
         color: #4078c0
         font-size: 0.9rem !important
+
+/* USER INFO 
+   ======================================= */
+.user-info 
+    margin-top: 40px
+
+    .bio,
+    .company,
+    .location 
+        margin-bottom: 40px
+
+        h6 
+            margin-bottom: 5px 
+
+        p 
+            line-height: 25px
+            color: #424242
+            font-size: 0.840rem !important
+
 
 /* REPOS 
    ======================================= */

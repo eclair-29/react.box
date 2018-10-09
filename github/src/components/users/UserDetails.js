@@ -39,10 +39,26 @@ class UserDetails extends Component {
 
                 {/* Routes */}
                 <Switch>
-                    <Route exact path={ `${match.path}` } component={ UserOverview } />
-                    <Route exact path={ `${match.path}/repos` } component={ UserRepos } />
-                    <Route exact path={ `${match.path}/issues` } component={ UserIssues } />
-                    <Route exact path={ `${match.path}/info` } component={ UserInfo } />
+                    {/* User Overview Route */}
+                    <Route 
+                        exact path={ `${match.path}` } 
+                        component={ UserOverview } 
+                    />
+                    {/* User Repos Route */}
+                    <Route 
+                        exact path={ `${match.path}/repos` } 
+                        component={ UserRepos } 
+                    />
+                    {/* User Issues Route */}
+                    <Route 
+                        exact path={ `${match.path}/issues` } 
+                        component={ UserIssues } 
+                    />
+                    {/* User Info Route */}
+                    <Route 
+                        exact path={ `${match.path}/info` } 
+                        render={props => <UserInfo { ...props } user={ user } /> }
+                    />
                 </Switch>
             </div>
         )
