@@ -1,21 +1,42 @@
-import React from 'react'
-import { Dropdown } from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Input } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
-const Search = () => {
-    const options = []
+// Actions 
+import { search_users } from '../../store/actions/search_actions'
 
-    return (
-        <div className="search-bar">
-            <Dropdown 
-                placeholder="Search"  
-                search 
-                floating
-                selection
-                icon=""
-                options={ options }
-            />
-        </div>
-    )
+class Search extends Component {
+    state = {
+        query: ''
+    }
+
+    handle_search = e => {
+        this.setState({ 
+            [e.target.id]: e.target.value 
+        }, () => {
+            this.props.search_users(this.state.query)
+        })
+    }
+
+    render() {
+        console.log(this.props.options)
+        return (
+            <div className="search-bar">
+                <Input
+                    placeholder="Search anything"
+                    id="query"
+                    value={ this.state.query }
+                    onChange={ this.handle_search }
+                />
+            </div>
+        )
+    }
 }
 
-export default Search
+const mapStateToProps = state => {
+    return {
+        options: state.search.options
+    }
+}
+
+export default connect(mapStateToProps, { search_users })(Search)
