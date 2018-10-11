@@ -1,9 +1,10 @@
 import React from 'react' 
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 // Layouts
 import SignedInLinks from './SignedInLinks'
-import SignedOutLinks from './SignedOutLinks'
+// import SignedOutLinks from './SignedOutLinks'
 
 const Nav = () => {
     return (
@@ -15,4 +16,11 @@ const Nav = () => {
     ) 
 }
 
-export default Nav
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps)(Nav)
