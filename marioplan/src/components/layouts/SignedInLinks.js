@@ -7,9 +7,10 @@ import { connect } from 'react-redux'
 // Actions 
 import { signout } from '../../store/actions/auth_actions'
 
-const SignedInLinks = ({ signout }) => {
+const SignedInLinks = ({ signout, profile }) => {
     return (
         <ul className="menu">
+            <li><span className="user">Welcome { profile.name }</span></li>
             <li><NavLink to='/create'>New Project</NavLink></li>
             <li><a onClick={ signout }>Log Out</a></li>
         </ul>

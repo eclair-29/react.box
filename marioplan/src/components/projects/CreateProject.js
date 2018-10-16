@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 // Actions 
 import { create_project } from '../../store/actions/project_actions'
@@ -22,13 +23,17 @@ class CreateProject extends Component {
     }
 
     render() {
+        const { auth } = this.props
+        /* Checking if the user is signed in or not */
+        if (!auth.uid) return <Redirect to='/signin' />
+
         return (
             <div className="create-project wrapper">
                 <form 
                     onSubmit={ this.handle_submit } 
                     className="ui tiny form">
 
-                    <h4>Create a new Projecty</h4>
+                    <h4>Create a new Project</h4>
 
                     <div className="field">
                         <input 
@@ -58,6 +63,13 @@ class CreateProject extends Component {
     }
 }
 
+// Stete to Props
+const mapStateToProps = state => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
 // Dispatchers
 const mapDispatchToProps = dispatch => {
     return {
@@ -65,4 +77,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(CreateProject)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProject)
