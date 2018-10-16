@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+
+// Actions
+import { signup } from '../../store/actions/auth_actions'
 
 class SignUp extends Component {
     state = {
         email: '',
         password: '',
-        fname: '',
-        Lname: ''
+        firstName: '',
+        lastName: ''
     }
 
     heandle_change = e => {
@@ -18,10 +23,14 @@ class SignUp extends Component {
         e.preventDefault()
         e.target.reset()
 
-        console.log(this.state)
+        this.props.signup(this.state)
     }
 
-    render() {
+    render() {  
+        const { auth } = this.props
+        /* Checking if the user is signed in or not */
+        if (auth.uid) return <Redirect to='/' />
+
         return (
             <div className="signup wrapper">
                 <form 
@@ -34,14 +43,14 @@ class SignUp extends Component {
                          <div className="field">
                             <input 
                                 onChange={ this.heandle_change } 
-                                id="fname" type="text" 
+                                id="firstName" type="text" 
                                 placeholder="First Name"
                             />
                         </div>
                         <div className="field">
                             <input 
                                 onChange={ this.heandle_change } 
-                                id="lname" 
+                                id="lastName" 
                                 type="text" 
                                 placeholder="Last name"
                             />
@@ -76,4 +85,10 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp
+const mapStateToProps = state => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps, { signup })(SignUp)
