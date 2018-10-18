@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Nav from './components/layouts/Nav'								// Layouts
-import Dashboard from './components/dashboard/Dashboard'				// Dashboard
-import ProjectDetails from './components/projects/ProjectDetails'		// Proj. Details
-import CreateProject from './components/projects/CreateProject'			// Create Proj.
-import SignIn from './components/auth/SignIn'							// Sign In
-import SignUp from './components/auth/SignUp'							// Sign Up
+import Nav from './components/layouts/Nav'												
+import Dashboard from './components/dashboard/Dashboard'				 
+import ProjectDetails from './components/projects/ProjectDetails'			 
+import CreateProject from './components/projects/CreateProject'				
+import SignIn from './components/auth/SignIn'											
+import SignUp from './components/auth/SignUp'										
 
 class App extends Component {
 	render() {

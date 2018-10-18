@@ -7,10 +7,11 @@ import { signup } from '../../store/actions/auth_actions'
 
 class SignUp extends Component {
     state = {
-        email: '',
-        password: '',
-        firstName: '',
-        lastName: ''
+        email: "",
+        password: "",
+        firstName: "",
+        lastName: "",
+        username: ""
     }
 
     heandle_change = e => {
@@ -55,6 +56,15 @@ class SignUp extends Component {
                                 placeholder="Last name"
                             />
                         </div>
+                    </div>
+
+                    <div className="field">
+                        <input 
+                            onChange={ this.heandle_change } 
+                            id="username" 
+                            type="text" 
+                            placeholder="Username"
+                        />
                     </div>
 
                     <div className="field">

@@ -20,6 +20,7 @@ class CreateProject extends Component {
     handle_submit = e => {
         e.preventDefault()
         this.props.create_project(this.state)
+        this.props.history.push('/')
     }
 
     render() {

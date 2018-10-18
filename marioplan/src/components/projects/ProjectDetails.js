@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
+import moment from 'moment'
 
 const ProjectDetails = ({ project, auth }) => {
     /* Checking if the user is signed in or not */
@@ -12,12 +13,12 @@ const ProjectDetails = ({ project, auth }) => {
         return (
             <div className="project-details wrapper">
                 <div className="header">
-                    <h4 className="title">{ project.title }</h4>
+                    <span className="title">{ project.title }</span>
                     <span>Posted by: { project.author_fname } { project.author_lname }</span>
                 </div>
                 <div className="content">{ project.content }</div>
                 <div className="footer">
-                    <span>29th November, 2am</span>
+                    <span>{ moment(project.created_at.toDate()).fromNow() }</span>
                 </div>
             </div>
         )
@@ -33,7 +34,7 @@ const mapStateToProps = (state, own_props) => {
 
     return {
         project: project,
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
     }
 }
 
