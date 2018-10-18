@@ -22,17 +22,21 @@
     margin: 20px 0              !important
 
     .header 
-        font-size: 1rem !important
+        font:
+            family: Pangram_Medium !important
+            size: 0.9rem !important
+            weight: 500 !important
+        color: #212121
         margin-bottom: 5px
 
     .meta 
-        font-size: 0.84rem !important
+        font-size: 0.850rem !important
         color: #009688 !important
 
     .description
         font:
             family: pangram    
-            size: 0.84rem !important
+            size: 0.850rem !important
         color: #757575 !important
         line-height: 25px
 
@@ -40,7 +44,7 @@
    ======================================= */
 .message 
     border-radius: 0 !important 
-    font-size: 0.840rem !important
+    font-size: 0.90rem !important
 
 /* NAV
    ======================================= */
@@ -48,7 +52,7 @@
     height: 70px
     max-width: 100% !important 
     padding: 0 40px !important
-    background: #E91E63 
+    background-image: linear-gradient(90deg, #2196F3, #03A9F4) 
     display: flex
     justify-content: space-between 
     align-items: center 
@@ -108,19 +112,28 @@
     margin-top: 40px
 
     span 
-        font-size: 0.84rem !important
+        font-size: 0.850rem !important
         color: rgba(#000000, 0.4)
 
         &:nth-child(2)
             color: #009688 !important
 
-    h4 
+    .header 
+        display: flex
+        flex-direction: column
+
+    .title 
+        font:
+            family: Pangram_Medium !important
+            size: 0.9rem !important
+            weight: 500 !important
+        color: #212121
         margin-bottom: 5px
 
     .content 
         font:
             family: pangram    
-            size: 0.84rem !important
+            size: 0.9rem !important
         color: #757575 !important
         margin: 20px 0
         line-height: 25px
