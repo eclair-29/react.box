@@ -54,6 +54,8 @@
     padding: 0 40px !important
     background-image: linear-gradient(90deg, #2196F3, #03A9F4) 
     display: flex
+    +position(fixed, 0 null null 0)
+    z-index: 4
     justify-content: space-between 
     align-items: center 
 
@@ -88,7 +90,7 @@
 /* NOTIFICATIONS
    ======================================= */
 .notifications 
-    +position(absolute, 70px 0 null null)
+    +position(fixed, 70px 0 null null)
     +size(350px, 100vh)
     background: #ffffff
     border-left: 1px solid #E0E0E0
@@ -101,15 +103,48 @@
         max-width: 100%
         padding: 20px
 
+        .segments
+            border-radius: 0 !important
+            box-shadow: none !important
+            border: none !important
+            //margin: 30px 0 !important
+
+        .segment
+            border-radius: 0 !important
+            border:
+                top: none
+                right: 1px solid #E0E0E0 !important 
+                bottom: 1px solid #E0E0E0 !important 
+                left: 1px solid #E0E0E0 !important 
+            display: flex
+            justify-content: space-between
+
+            &:nth-child(1) 
+                border-top: 1px solid #E0E0E0 !important 
+
+            p 
+                font:
+                    family: pangram    
+                    size: 0.850rem !important
+                color: #757575 !important
+                line-height: 25px
+                width: 100%
+
+            span 
+                font-size: 0.850rem !important
+                color: #009688 !important
+                width: 100%
+                text-align: right
+
 /* PROJECT LIST
    ======================================= */
 .projects
-    margin-top: 40px 
+    margin-top: 120px 
 
 /* PROJECT DETAILS
    ======================================= */
 .project-details 
-    margin-top: 40px
+    margin-top: 120px
 
     span 
         font-size: 0.850rem !important
@@ -142,7 +177,7 @@
    ======================================= */
 .signin, 
 .signup
-    margin-top: 80px
+    margin-top: 150px
     max-width: 400px !important
 
     .form 
@@ -163,7 +198,7 @@
 /* CREATE PROJECT
    ======================================= */
 .create-project 
-    margin-top: 40px
+    margin-top: 120px
     max-width: 500px !important
 
     h4 
