@@ -26,10 +26,30 @@ exports.projectCreated = functions.firestore
     .onCreate(doc => {
         const project = doc.data();
         const notification = {
-            content: 'Added a new project',
+            content: 'added a new project',
             user: `${project.author_fname} ${project.author_lname}`,
             timestamp: admin.firestore.FieldValue.serverTimestamp()
         }
 
         return createNotification(notification)
+    })
+
+// // User Joined Function Trigger
+exports.userJoined = functions.auth
+    .user()
+    .onCreate(user => {
+        return admin.firestore()
+        .collection('users')
+        .doc(user.uid)
+        .get()
+        .then(doc => {
+            const newUser = doc.data()
+            const notification = {
+                content: 'joined the party',
+                user: `${newUser.firstName} ${newUser.lastName}`,
+                timestamp: admin.firestore.FieldValue.serverTimestamp()
+            }
+
+            return createNotification(notification)
+        })
     })

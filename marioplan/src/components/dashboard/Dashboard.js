@@ -9,7 +9,7 @@ import Notifications from './Notifications'       // Notifications
 
 class Dashboard extends Component {
     render() {
-        const { projects, auth } = this.props
+        const { projects, auth, notifications } = this.props
         /* Checking if the user is signed in or not */
         if (!auth.uid) return <Redirect to='/signin' />
 
@@ -19,7 +19,7 @@ class Dashboard extends Component {
                     <ProjectList projects={ projects } />
                 </div>
                 <div className="notifications">
-                    <Notifications />
+                    <Notifications notifications={ notifications }  />
                 </div>
             </div>
         )
@@ -29,13 +29,15 @@ class Dashboard extends Component {
 const mapStateToProps = state => {
     return {
         projects: state.firestore.ordered.projects,
-        auth: state.firebase.auth 
+        auth: state.firebase.auth ,
+        notifications: state.firestore.ordered.notifications
     }
 }
 
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([ 
-        { collection: 'projects' }
+        { collection: 'projects' },
+        { collection: 'notifications', limit: 50 }
     ])
 )(Dashboard)

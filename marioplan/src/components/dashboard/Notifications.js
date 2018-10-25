@@ -1,17 +1,19 @@
 import React from 'react'
+import moment from 'moment'
 
-const Notifications = () => {
+const Notifications = ({ notifications }) => {
     return (
         <div className="container">
             <div className="ui segments">
-                <div className="ui segment">
-                    <p>tine.o9 has created a project</p>
-                    <span>6 days ago</span>
-                </div>
-                <div className="ui segment">
-                    <p>eclair.29 has created a project</p>
-                    <span>10 days ago</span>
-                </div>
+                { notifications && notifications
+                .map(notification => {
+                    return (
+                        <div className="ui segment" key={ notification.id }>
+                            <p>{ `${notification.user} ${notification.content}` }</p>
+                            <span>{ moment(notification.timestamp.toDate()).fromNow() }</span>
+                        </div>
+                    )
+                }) }
             </div>
         </div>
     )
