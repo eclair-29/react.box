@@ -6,7 +6,7 @@ const Notifications = ({ notifications }) => {
         <div className="container">
             <div className="ui segments">
                 { notifications && notifications
-                .map(notification => {
+                .map(notification => { 
                     return (
                         <div className="ui segment" key={ notification.id }>
                             <p>{ `${notification.user} ${notification.content}` }</p>
